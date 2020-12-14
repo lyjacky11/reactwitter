@@ -24,6 +24,10 @@
     margin-left: 10px;
 }
 
+.post__timestamp {
+    margin-left: 100px;
+}
+
 .post__text {
     margin-bottom: 10px;
 }

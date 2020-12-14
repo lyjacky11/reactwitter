@@ -12,6 +12,7 @@ function Post({ id, post }) {
                 <div className="post__header">
                     <span className="post__displayName">{post.displayName}</span>
                     <span className="post__username">@{post.username}</span>
+                    <span className="post__timestamp">{new Date(post.timestamp.toDate()).toUTCString()}</span>
                 </div>
                 <div className="post__text">
                     {post.text}

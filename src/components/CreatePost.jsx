@@ -11,8 +11,8 @@ function CreatePost() {
         e.preventDefault();
         if (inputField !== "") {
             db.collection("posts").add({
-                displayName: "Jacky Ly",
-                username: "lyjacky11",
+                displayName: "Sample User",
+                username: "demo",
                 text: inputField,
                 imageUrl: "",
                 timestamp: firebase.firestore.FieldValue.serverTimestamp()
