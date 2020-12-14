@@ -1,16 +1,20 @@
 import React from 'react';
 import './Sidebar.css';
 
+/* Components */
+import UserWidget from './UserWidget';
+
 function Sidebar() {
     return (
         <div className="sidebar">
-
-            {/* User Widget */}
-            
-            <h2 className="sidebar__title">Trending</h2>            
+            <UserWidget />
+            <br /><br />
+            <div className="sidebar__title">
+                <h2>Trending</h2>
+            </div>
+            <br />        
             <div className="sidebar__footer">
-                <br />
-                <p>© 2020 Reactwitter.</p>
+                <h4>© 2020 Reactwitter.</h4>
             </div>
         </div>
     )
