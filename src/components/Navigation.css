@@ -1,6 +1,5 @@
 .navigation {
 	flex: 0.25;
-	border-right: 2px solid grey;
 }
 
 .navigation__title {
@@ -11,12 +10,14 @@
 	border-radius: 30px;
 }
 
+/*
 .navigation__title:hover {
 	cursor: pointer;
 	background-color: var(--hover-bg-color);
 	transition: all 250ms ease-in-out;
 	transition-property: color, background-color;
 }
+*/
 
 .navigation__titleIcon {
 	padding-right: 15px;

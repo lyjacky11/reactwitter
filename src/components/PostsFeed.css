@@ -1,14 +1,22 @@
 .postsFeed {
 	flex: 0.5;
-	border-right: 2px solid grey;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
 	min-width: fit-content;
 	overflow-y: scroll;
+}
+
+.postsFeed__container {
+	position: sticky;
+	top: 0;
 }
 
 .postsFeed__title {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	background-color: white;
+	border-bottom: 1px solid grey;
 	padding: 15px;
 }
 

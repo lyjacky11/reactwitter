@@ -33,7 +33,7 @@ function CreatePost() {
                     <MdAccountCircle />
                 </div>
                 <input className="createPost__input" type="text" onChange={(e) => setInputField(e.target.value)} value={inputField} placeholder="What's happening?"></input>
-                <button className="createPost__button" type="submit" onClick={handleSubmit}>Post</button>                
+                <button className="createPost__button" type="submit" onClick={handleSubmit}>Post</button>
             </form>
             <input className="createPost__imageURL" type="text" onChange={(e) => setImageField(e.target.value)} value={imageField} placeholder="Image URL (optional)"></input>
         </div>

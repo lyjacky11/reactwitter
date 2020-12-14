@@ -7,6 +7,7 @@ import Footer from './Footer';
 function Sidebar() {
     return (
         <div className="sidebar">
+            {/* User Widget */}
             <h2>Trending</h2>
             <br />
             <Footer />

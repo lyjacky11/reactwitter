@@ -12,7 +12,7 @@ function Navigation() {
             {/* Logo */}
             <h2 className="navigation__title">
                 <FaTwitter className="navigation__titleIcon" />
-                <span className="navigation__titleText">Reactwitter</span>    
+                <span className="navigation__titleText">Reactwitter</span>
             </h2>
             <NavItem Icon={MdHome} title="Home" active />
             <NavItem Icon={MdPerson} title="Profile" />

@@ -1,6 +1,6 @@
 .createPost {
     background-color: var(--hover-bg-color);
-    border-top: 2px solid grey;
+    border-bottom: 1px solid grey;
     padding: 10px;
 }
 

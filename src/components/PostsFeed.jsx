@@ -20,11 +20,13 @@ function PostsFeed() {
 
     return (
         <div className="postsFeed">
-            <div className="postsFeed__title">
-                <h3>Home</h3>
-                <SearchBar />
-            </div>
-            <CreatePost />
+            <div className="postsFeed__container">
+                <div className="postsFeed__title">
+                    <h3>Home</h3>
+                    <SearchBar />
+                </div>
+                <CreatePost />
+            </div>            
             {
                 posts?.map(postInfo => (
                     <Post
