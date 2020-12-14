@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import './Post.css';
 import { MdAccountCircle } from 'react-icons/md';
 
@@ -12,7 +13,7 @@ function Post({ id, post }) {
                 <div className="post__header">
                     <span className="post__displayName">{post.displayName}</span>
                     <span className="post__username">@{post.username}</span>
-                    <span className="post__timestamp">{post.timestamp && new Date(post.timestamp.toDate()).toUTCString()}</span>
+                    <span className="post__timestamp">{post.timestamp && moment(post.timestamp.toDate()).calendar()}</span>
                 </div>
                 <div className="post__text">
                     {post.text}

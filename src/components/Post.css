@@ -16,16 +16,22 @@
     margin: 0 20px;
 }
 
+.post__header {
+    display: flex;
+    align-items: center;
+}
+
 .post__displayName {
     font-weight: bold;
+    flex: 0.45;
 }
 
 .post__username {
-    margin-left: 10px;
+    flex: 1;
 }
 
 .post__timestamp {
-    margin-left: 100px;
+    font-style: italic;
 }
 
 .post__text {
