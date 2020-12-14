@@ -2,19 +2,19 @@ import React from 'react';
 import './Post.css';
 import { MdAccountCircle } from 'react-icons/md';
 
-function Post() {
+function Post({ displayName, username, text }) {
     return (
         <div className="post">
             <div className="post__avatar">
                 <MdAccountCircle />
-            </div>            
+            </div>
             <div className="post__content">
                 <div className="post__header">
-                    <span className="post__displayName">Jacky Ly</span>
-                    <span className="post__username">@lyjacky11</span>
+                    <span className="post__displayName">{displayName}</span>
+                    <span className="post__username">@{username}</span>
                 </div>
                 <div className="post__text">
-                    Text Here
+                    {text}
                 </div>
                 <div className="post__image">
                     Image Here
