@@ -13,7 +13,7 @@
 /*
 .navigation__title:hover {
 	cursor: pointer;
-	background-color: var(--hover-bg-color);
+	background-color: var(--secondary-color);
 	transition: all 250ms ease-in-out;
 	transition-property: color, background-color;
 }
@@ -22,3 +22,9 @@
 .navigation__titleIcon {
 	padding-right: 15px;
 }
+
+/* @media screen and (min-width: 768px) {
+	.navigation {
+		width: 0;
+	}
+} */

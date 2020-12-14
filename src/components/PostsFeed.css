@@ -1,7 +1,8 @@
 .postsFeed {
 	flex: 0.5;
-	border-left: 1px solid grey;
-	border-right: 1px solid grey;
+	border-width: 0px 1px;
+	border-style: solid;
+	border-color: var(--border-color);
 	min-width: fit-content;
 	overflow-y: scroll;
 }
@@ -15,8 +16,8 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: white;
-	border-bottom: 1px solid grey;
+	background-color: var(--bg-color);
+	border-bottom: 1px solid var(--border-color);
 	padding: 15px;
 }
 

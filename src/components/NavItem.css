@@ -9,7 +9,7 @@
 .navItem:hover {
 	cursor: pointer;
 	color: var(--main-color);
-	background-color: var(--hover-bg-color);
+	background-color: var(--secondary-color);
 	transition: all 250ms ease-in-out;
 	transition-property: color, background-color;
 }

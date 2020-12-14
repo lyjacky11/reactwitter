@@ -18,21 +18,25 @@ a {
 /* CSS variables */
 :root {
 	--main-color: #2377ff;
-	--hover-bg-color: #c6e5ff;
+	--secondary-color: #c6e5ff;
+	--border-color: grey;
+	--text-color: black;
+	--text-alt-color: white;
+	--bg-color: #fafafa;
+	--bg-alt-color: rgb(244, 254, 255);
+}
+
+.dark {
 	--text-color: white;
+	--text-alt-color: black;
 	--bg-color: #181818;
 	--bg-alt-color: #232323;
 }
 
-.light {
-	--bg-color: #fafafa;
-	--bg-alt-color: rgb(244, 254, 255);
-	--text-color: black;
-}
-
 /* Scrollbar */
 ::-webkit-scrollbar {
-	width: 8px;
+	width: 7px;
+	height: 7px;
 }
 ::-webkit-scrollbar-thumb {
 	background: var(--main-color);
