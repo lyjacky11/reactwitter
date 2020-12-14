@@ -4,7 +4,7 @@ import './Footer.css';
 function Footer() {
     return (
         <div className="footer">
-            <h3>Footer</h3>
+            <p>© 2020 Reactwitter.</p>
         </div>
     )
 }

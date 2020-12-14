@@ -1,4 +1,24 @@
 .postsFeed {
-	flex: 0.4;
+	flex: 0.5;
 	border-right: 2px solid grey;
+	min-width: fit-content;
+	overflow-y: scroll;
+}
+
+.postsFeed__title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.postsFeed::-webkit-scrollbar {
+	display: none;
+  }
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.postsFeed {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
 }

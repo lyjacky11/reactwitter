@@ -4,7 +4,7 @@ import './SearchBar.css';
 function SearchBar() {
     return (
         <div className="searchBar">
-            <h3>SearchBar</h3>
+            <input className="searchBar__input" type="text" placeholder="Search Posts"></input>
         </div>
     )
 }

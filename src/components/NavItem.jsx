@@ -1,10 +1,13 @@
 import React from 'react';
 import './NavItem.css';
 
-function NavItem() {
+function NavItem({ Icon, title, active }) {
     return (
-        <div className="navItem">
-            <h3>NavItem</h3>
+        <div className={`navItem${active ? ` active` : ""}`}>
+            <Icon className="navItem__icon" />
+            <div className="navItem__title">
+                {title}
+            </div>
         </div>
     )
 }

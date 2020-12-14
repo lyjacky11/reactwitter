@@ -17,7 +17,8 @@ a {
 
 /* CSS variables */
 :root {
-	--main-color: ##669df6;
+	--main-color: #2377ff;
+	--hover-bg-color: #c6e5ff;
 	--text-color: white;
 	--bg-color: #181818;
 	--bg-alt-color: #232323;

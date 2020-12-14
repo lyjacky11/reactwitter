@@ -1,4 +1,23 @@
 .navigation {
-	flex: 0.3;
+	flex: 0.25;
 	border-right: 2px solid grey;
+}
+
+.navigation__title {
+	display: flex;
+	align-items: center;
+	width: fit-content;
+	padding: 15px;
+	border-radius: 30px;
+}
+
+.navigation__title:hover {
+	cursor: pointer;
+	background-color: var(--hover-bg-color);
+	transition: all 250ms ease-in-out;
+	transition-property: color, background-color;
+}
+
+.navigation__titleIcon {
+	padding-right: 15px;
 }

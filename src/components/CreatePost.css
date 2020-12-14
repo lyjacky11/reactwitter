@@ -1,3 +1,39 @@
 .createPost {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--hover-bg-color);
     border-top: 2px solid grey;
+}
+
+.createPost__avatar {
+    font-size: 50px;
+    flex: 0;
+}
+
+.createPost__input {
+    flex: 1;
+    padding: 10px;
+    margin: 0 20px;
+    outline: none;
+    border-radius: 25px;
+    border: none;    
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.createPost__button {
+    flex: 0;
+    padding: 12px 20px;
+    border-radius: 25px;
+    color: var(--text-color);
+    background-color: var(--main-color);
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+}
+
+.createPost__button:hover {
+    cursor: pointer;
+    opacity: 0.75;
 }
