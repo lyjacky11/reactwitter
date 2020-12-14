@@ -17,7 +17,7 @@ function Post({ id, post }) {
                     {post.text}
                 </div>
                 <div className="post__image">
-                    <img className="post__imageSrc" src={post.imageUrl} alt="Image" />
+                    <img className="post__imageSrc" src={post.imageUrl} alt="" />
                 </div>
                 {/* <div className="post__footer">
                     Footer
