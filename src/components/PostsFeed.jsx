@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { db } from '../firebase';
 import './PostsFeed.css';
 
 /* Components */
@@ -10,18 +11,11 @@ function PostsFeed() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        setPosts([
-            {
-                displayName: "Jacky Ly",
-                username: "lyjacky11",
-                text: "Testing states in React"
-            },
-            {
-                displayName: "Seyon R",
-                username: "seyon123",
-                text: "Testing hooks and states"
-            }
-        ]);
+        db.collection("posts").onSnapshot(snapshot => {
+            setPosts(snapshot.docs.map(doc => (
+                { id: doc.id, post: doc.data() }
+            )))
+        })
     }, []);
 
     return (
@@ -32,12 +26,10 @@ function PostsFeed() {
             </div>
             <CreatePost />
             {
-                posts.map((post, i) => (
+                posts?.map(postInfo => (
                     <Post
-                        key={i}
-                        displayName={post.displayName}
-                        username={post.username}
-                        text={post.text}
+                        key={postInfo.id}
+                        post={postInfo.post}
                     />
                 ))
             }

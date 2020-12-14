@@ -23,3 +23,15 @@
 .post__username {
     margin-left: 10px;
 }
+
+.post__text {
+    margin-bottom: 10px;
+}
+
+.post__image {
+    max-width: 500px;
+}
+
+.post__imageSrc {
+    width: 100%;
+}
