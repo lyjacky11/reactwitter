@@ -1,9 +1,12 @@
 .createPost {
-    display: flex;
-    align-items: center;
-    padding: 10px;
     background-color: var(--hover-bg-color);
     border-top: 2px solid grey;
+    padding: 10px;
+}
+
+.createPost__form {
+    display: flex;
+    align-items: center;     
 }
 
 .createPost__avatar {
@@ -31,6 +34,17 @@
     font-weight: bold;
     font-size: 16px;
     border: none;
+}
+
+.createPost__imageURL {
+    padding: 7px;
+    width: 70%;
+    margin-left: 12%;
+    outline: none;
+    border-radius: 25px;
+    border: none;    
+    font-weight: bold;
+    font-size: 13px;
 }
 
 .createPost__button:hover {

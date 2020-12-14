@@ -19,7 +19,7 @@ function Post({ id, post }) {
                     {post.text}
                 </div>
                 <div className="post__image">
-                    <img className="post__imageSrc" src={post.imageUrl} alt="" />
+                    <a href={post.imageUrl} target="_blank" rel="noreferrer"><img className="post__imageSrc" src={post.imageUrl} alt="" /></a>
                 </div>
                 {/* <div className="post__footer">
                     Footer
