@@ -25,7 +25,7 @@ function CreatePost() {
     }
 
     return (
-        <div>
+        <>
             <form className="createPost">
                 <div className="createPost__avatar">
                     <MdAccountCircle />
@@ -33,7 +33,7 @@ function CreatePost() {
                 <input className="createPost__input" type="text" onChange={(e) => setInputField(e.target.value)} value={inputField} placeholder="What's happening?" required></input>
                 <button className="createPost__button" type="submit" onClick={handleSubmit}>Post</button>
             </form>
-        </div>
+        </>
     )
 }
 
