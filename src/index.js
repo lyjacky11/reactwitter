@@ -23,11 +23,11 @@ serviceWorkerRegistration.register({
 	  if (waitingServiceWorker) {
 		waitingServiceWorker.addEventListener("statechange", event => {
 		  if (event.target.state === "activated") {
-			if (
-			  window.confirm("New app version is available! Do you want to update?")
-			) {
-			  window.location.reload()
-			}
+			// if (
+			//   window.confirm("New app version is available! Do you want to update?")
+			// )
+			console.log("New app version is available! Updating now...")
+			window.location.reload()
 		  }
 		})
 		waitingServiceWorker.postMessage({ type: "SKIP_WAITING" })
