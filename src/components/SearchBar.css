@@ -1,8 +1,18 @@
+.searchBar {
+    display: flex;
+    align-items: center;
+}
+
+.searchBar__icon {
+    font-size: 25px;
+}
+
 .searchBar__input {
     padding: 10px;
     outline: none;
     border-radius: 25px;
     border: none;
+    color: var(--text-color);
     background-color: var(--secondary-color);
     font-weight: bold;
     font-size: 14px;

@@ -1,7 +1,7 @@
 .post {
     display: flex;
     padding: 10px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: var(--border-width) solid var(--border-color);
 }
 
 .post__avatar {
