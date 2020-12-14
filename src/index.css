@@ -17,10 +17,10 @@ a {
 
 /* CSS variables */
 :root {
+	--main-color: ##669df6;
+	--text-color: white;
 	--bg-color: #181818;
 	--bg-alt-color: #232323;
-	--text-color: white;
-	--main-color: #007bff;
 }
 
 .light {

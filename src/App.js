@@ -1,12 +1,19 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="app">
-      <h1>Reactwitter</h1>
-    </div>
-  );
+/* Components */
+import Navigation from "./components/Navigation";
+import PostsFeed from "./components/PostsFeed";
+import Sidebar from "./components/Sidebar";
+
+function App () {
+	return (
+		<div className="app">
+			<Navigation />
+			<PostsFeed />
+			<Sidebar />
+		</div>
+	);
 }
 
 export default App;
