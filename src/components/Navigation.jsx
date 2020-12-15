@@ -51,27 +51,30 @@ function Navigation({ Icon, title }) {
 
     return (
         <div className="navigation">
-            <h2 className="navigation__title">
-                <Icon className="navigation__titleIcon" />
-                <span className="navigation__titleText">{title}</span>
-            </h2>
-            <div className="navigation__items">
-                <NavItem Icon={MdHome} title="Home" active />
-                <NavItem Icon={MdPerson} title="Profile" />
-                <NavItem Icon={MdChat} title="Messages" />
-                <NavItem Icon={MdExplore} title="Explore" />
-                <NavItem Icon={MdNotifications} title="Notifications" />
-                <NavItem Icon={MdSettings} title="Settings" />
-            </div>
-            <br />
-            <hr />
-            <h3 className="navigation__title">
-                <span className="navigation__titleText">Theme</span>
-            </h3>
+            <div className="navigation__pages">
+                <h2 className="navigation__title">
+                    <Icon className="navigation__titleIcon" />
+                    <span className="navigation__titleText">{title}</span>
+                </h2>
+                <div className="navigation__items">
+                    <NavItem Icon={MdHome} title="Home" active />
+                    <NavItem Icon={MdPerson} title="Profile" />
+                    <NavItem Icon={MdChat} title="Messages" />
+                    <NavItem Icon={MdExplore} title="Explore" />
+                    <NavItem Icon={MdNotifications} title="Notifications" />
+                    <NavItem Icon={MdSettings} title="Settings" />
+                </div>
+            </div>            
+            <div className="navigation__spacer"></div>
             <div className="navigation__themes">
-                <NavItem Icon={FaLightbulb} title="Light" theme="theme__light" active={activeTheme.light} />
-                <NavItem Icon={FaMoon} title="Dark" theme="theme__dark" active={activeTheme.dark} />
-            </div>
+                <h3 className="navigation__title">
+                    <span className="navigation__titleText">Theme</span>
+                </h3>
+                <div className="navigation__items">
+                    <NavItem Icon={FaLightbulb} title="Light" theme="theme__light" active={activeTheme.light} />
+                    <NavItem Icon={FaMoon} title="Dark" theme="theme__dark" active={activeTheme.dark} />
+                </div>
+            </div>            
         </div>
     )
 }

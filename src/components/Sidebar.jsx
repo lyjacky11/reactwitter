@@ -12,7 +12,7 @@ function Sidebar({ title }) {
             <div className="sidebar__title">
                 <h2>{title}</h2>
             </div>
-            <br />
+            <div className="sidebar__spacer"></div>
             <div className="sidebar__footer">
                 <h4>© 2020 Reactwitter.</h4>
             </div>

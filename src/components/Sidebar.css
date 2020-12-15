@@ -1,4 +1,10 @@
 .sidebar {
-	flex: 0.25;
+	flex: 0.15;
 	margin: 15px;
+	display: flex;
+	flex-direction: column;
+}
+
+.sidebar__spacer {
+	flex: 0.95;
 }
