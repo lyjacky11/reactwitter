@@ -16,22 +16,20 @@ function Navigation({ Icon, title }) {
         const darkBtn = document.querySelector("#theme__dark");
         const savedTheme = localStorage.getItem("theme");
         
+        // Default to light theme
+        bodyClassList.value = "theme-light";
+        setActiveTheme({
+            "light": true,
+            "dark": false
+        });
         // Fetch theme from local storage
-        if (savedTheme === "light") {
-            bodyClassList.value = "theme-light";
-            setActiveTheme({
-                "light": true,
-                "dark": false
-            });
-        }
-        else if (savedTheme === "dark") {
+        if (savedTheme === "dark") {
             bodyClassList.value = "theme-dark";
             setActiveTheme({
                 "light": false,
                 "dark": true
             });
         }
-
         // Event listeners
         lightBtn.addEventListener("click", () => {
             bodyClassList.value = "theme-light";
