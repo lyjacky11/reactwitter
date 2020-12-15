@@ -4,13 +4,13 @@ import './Sidebar.css';
 /* Components */
 import UserWidget from './UserWidget';
 
-function Sidebar({ title }) {
+function Sidebar() {
     return (
         <div className="sidebar">
             <UserWidget />
             <br /><br />
             <div className="sidebar__title">
-                <h2>{title}</h2>
+                <h2>Trending</h2>
             </div>
             <div className="sidebar__spacer"></div>
             <div className="sidebar__footer">

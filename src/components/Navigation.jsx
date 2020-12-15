@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import './Navigation.css';
 import { MdHome, MdPerson, MdChat, MdExplore, MdNotifications, MdSettings } from 'react-icons/md';
-import { FaMoon, FaLightbulb } from 'react-icons/fa';
+import { FaLightbulb, FaMoon } from 'react-icons/fa';
 
 /* Components */
 import NavItem from './NavItem';
 
-function Navigation({ Icon, title }) {
-    const [activeTheme, setActiveTheme] = useState({});
+function Navigation({ Icon }) {
     const [activeNavItem, setActiveNavItem] = useState(0);
-    
-    // Set navigation items
+    const [activeThemeItem, setActiveThemeItem] = useState(0);
+
+    //Nnavigation Items
     const navItems = [
         { title: "Home", icon: MdHome },
         { title: "Profile", icon: MdPerson },
@@ -18,6 +18,12 @@ function Navigation({ Icon, title }) {
         { title: "Explore", icon: MdExplore },
         { title: "Notifications", icon: MdNotifications },
         { title: "Settings", icon: MdSettings }
+    ]
+
+    // Theme Items
+    const themeItems = [
+        { title: "Light", theme: "theme__light", icon: FaLightbulb },
+        { title: "Dark", theme: "theme__dark", icon: FaMoon }
     ]
 
     // Set theme
@@ -29,34 +35,24 @@ function Navigation({ Icon, title }) {
 
         // Default to light theme
         bodyClassList.value = "theme-light";
-        setActiveTheme({
-            "light": true,
-            "dark": false
-        });
+        setActiveThemeItem(0);
+
         // Fetch theme from local storage
         if (savedTheme === "dark") {
             bodyClassList.value = "theme-dark";
-            setActiveTheme({
-                "light": false,
-                "dark": true
-            });
+            setActiveThemeItem(1);
         }
+
         // Event listeners
         lightBtn.addEventListener("click", () => {
             bodyClassList.value = "theme-light";
             localStorage.setItem("theme", "light");
-            setActiveTheme({
-                "light": true,
-                "dark": false
-            });
+            setActiveThemeItem(0);
         })
         darkBtn.addEventListener("click", () => {
             bodyClassList.value = "theme-dark";
             localStorage.setItem("theme", "dark");
-            setActiveTheme({
-                "light": false,
-                "dark": true
-            });
+            setActiveThemeItem(1);
         })
     }, []);
 
@@ -65,12 +61,19 @@ function Navigation({ Icon, title }) {
             <div className="navigation__pages">
                 <h2 className="navigation__title">
                     <Icon className="navigation__titleIcon" />
-                    <span className="navigation__titleText">{title}</span>
+                    <span className="navigation__titleText">Reactwitter</span>
                 </h2>
                 <div className="navigation__items">
                     {
                         navItems?.map((item, index) => (
-                            <NavItem key={index} id={index} title={item.title} Icon={item.icon} active={activeNavItem === index} setActive={setActiveNavItem} />
+                            <NavItem
+                                key={index}
+                                id={index}
+                                title={item.title}
+                                Icon={item.icon}
+                                active={activeNavItem === index}
+                                setActive={setActiveNavItem}
+                            />
                         ))
                     }
                 </div>
@@ -81,8 +84,19 @@ function Navigation({ Icon, title }) {
                     <span className="navigation__titleText">Theme</span>
                 </h3>
                 <div className="navigation__items">
-                    <NavItem Icon={FaLightbulb} title="Light" theme="theme__light" active={activeTheme.light} />
-                    <NavItem Icon={FaMoon} title="Dark" theme="theme__dark" active={activeTheme.dark} />
+                    {
+                        themeItems?.map((item, index) => (
+                            <NavItem
+                                key={index}
+                                id={index}
+                                title={item.title}
+                                Icon={item.icon}
+                                theme={item.theme}
+                                active={activeThemeItem === index}
+                                setActive={setActiveThemeItem}
+                            />
+                        ))
+                    }
                 </div>
             </div>
         </div>
