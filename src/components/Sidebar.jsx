@@ -4,15 +4,15 @@ import './Sidebar.css';
 /* Components */
 import UserWidget from './UserWidget';
 
-function Sidebar() {
+function Sidebar({ title }) {
     return (
         <div className="sidebar">
             <UserWidget />
             <br /><br />
             <div className="sidebar__title">
-                <h2>Trending</h2>
+                <h2>{title}</h2>
             </div>
-            <br />        
+            <br />
             <div className="sidebar__footer">
                 <h4>© 2020 Reactwitter.</h4>
             </div>

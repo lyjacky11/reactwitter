@@ -11,7 +11,6 @@ function UserWidget() {
                 <h4 className="userWidget__displayName">Sample User</h4>
                 <h5 className="userWidget__username">@demo</h5>
             </div>
-            
         </div>
     )
 }

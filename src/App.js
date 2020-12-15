@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { FaTwitter } from 'react-icons/fa';
 
 /* Components */
 import Navigation from "./components/Navigation";
@@ -9,9 +10,9 @@ import Sidebar from "./components/Sidebar";
 function App () {
 	return (
 		<div className="app">
-			<Navigation />
+			<Navigation Icon={FaTwitter} title="Reactwitter" />
 			<PostsFeed />
-			<Sidebar />
+			<Sidebar title="Trending" />
 		</div>
 	);
 }

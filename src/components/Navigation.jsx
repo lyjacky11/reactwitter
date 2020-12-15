@@ -1,18 +1,17 @@
 import React from 'react';
 import './Navigation.css';
 import { MdHome, MdPerson, MdChat, MdExplore, MdNotifications, MdSettings } from 'react-icons/md';
-import { FaTwitter } from 'react-icons/fa';
 
 /* Components */
 import NavItem from './NavItem';
 
-function Navigation() {
+function Navigation({ Icon, title }) {
     return (
         <div className="navigation">
             {/* Logo */}
             <h2 className="navigation__title">
-                <FaTwitter className="navigation__titleIcon" />
-                <span className="navigation__titleText">Reactwitter</span>
+                <Icon className="navigation__titleIcon" />
+                <span className="navigation__titleText">{title}</span>
             </h2>
             <NavItem Icon={MdHome} title="Home" active />
             <NavItem Icon={MdPerson} title="Profile" />
