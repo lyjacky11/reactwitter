@@ -5,11 +5,11 @@
 
 .userWidget__avatar {
     font-size: 45px;
-    flex: 0.25;
+    flex: 0.3;
 }
 
 .userWidget__info {
     display: flex;
     flex-direction: column;
-    flex: 0.75;
+    flex: 0.7;
 }

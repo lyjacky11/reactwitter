@@ -11,13 +11,13 @@ function CreatePost() {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (inputField !== "") {
-            db.collection("posts").add({
-                displayName: "Sample User",
-                username: "demo",
-                text: inputField,
-                imageUrl: imageField,
-                timestamp: firebase.firestore.FieldValue.serverTimestamp()
-            });
+            // db.collection("posts").add({
+            //     displayName: "Sample User",
+            //     username: "demo",
+            //     text: inputField,
+            //     imageUrl: imageField,
+            //     timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            // });
             setInputField("");
             setImageField("");
         }
