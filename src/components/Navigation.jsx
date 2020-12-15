@@ -8,6 +8,17 @@ import NavItem from './NavItem';
 
 function Navigation({ Icon, title }) {
     const [activeTheme, setActiveTheme] = useState({});
+    const [activeNavItem, setActiveNavItem] = useState(0);
+    
+    // Set navigation items
+    const navItems = [
+        { title: "Home", icon: MdHome },
+        { title: "Profile", icon: MdPerson },
+        { title: "Messages", icon: MdChat },
+        { title: "Explore", icon: MdExplore },
+        { title: "Notifications", icon: MdNotifications },
+        { title: "Settings", icon: MdSettings }
+    ]
 
     // Set theme
     useEffect(() => {
@@ -15,7 +26,7 @@ function Navigation({ Icon, title }) {
         const lightBtn = document.querySelector("#theme__light");
         const darkBtn = document.querySelector("#theme__dark");
         const savedTheme = localStorage.getItem("theme");
-        
+
         // Default to light theme
         bodyClassList.value = "theme-light";
         setActiveTheme({
@@ -57,14 +68,13 @@ function Navigation({ Icon, title }) {
                     <span className="navigation__titleText">{title}</span>
                 </h2>
                 <div className="navigation__items">
-                    <NavItem Icon={MdHome} title="Home" active />
-                    <NavItem Icon={MdPerson} title="Profile" />
-                    <NavItem Icon={MdChat} title="Messages" />
-                    <NavItem Icon={MdExplore} title="Explore" />
-                    <NavItem Icon={MdNotifications} title="Notifications" />
-                    <NavItem Icon={MdSettings} title="Settings" />
+                    {
+                        navItems?.map((item, index) => (
+                            <NavItem key={index} id={index} title={item.title} Icon={item.icon} active={activeNavItem === index} setActive={setActiveNavItem} />
+                        ))
+                    }
                 </div>
-            </div>            
+            </div>
             <div className="navigation__spacer"></div>
             <div className="navigation__themes">
                 <h3 className="navigation__title">
@@ -74,7 +84,7 @@ function Navigation({ Icon, title }) {
                     <NavItem Icon={FaLightbulb} title="Light" theme="theme__light" active={activeTheme.light} />
                     <NavItem Icon={FaMoon} title="Dark" theme="theme__dark" active={activeTheme.dark} />
                 </div>
-            </div>            
+            </div>
         </div>
     )
 }
