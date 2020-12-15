@@ -9,15 +9,33 @@ import NavItem from './NavItem';
 function Navigation({ Icon, title }) {
     const [activeTheme, setActiveTheme] = useState({});
 
+    // Set theme
     useEffect(() => {
         const bodyClassList = document.querySelector("body").classList;
         const lightBtn = document.querySelector("#theme__light");
         const darkBtn = document.querySelector("#theme__dark");
+        const savedTheme = localStorage.getItem("theme");
+        
+        // Fetch theme from local storage
+        if (savedTheme === "light") {
+            bodyClassList.value = "theme-light";
+            setActiveTheme({
+                "light": true,
+                "dark": false
+            });
+        }
+        else if (savedTheme === "dark") {
+            bodyClassList.value = "theme-dark";
+            setActiveTheme({
+                "light": false,
+                "dark": true
+            });
+        }
 
-        setActiveTheme({ "light": true, "dark": false });
-
+        // Event listeners
         lightBtn.addEventListener("click", () => {
             bodyClassList.value = "theme-light";
+            localStorage.setItem("theme", "light");
             setActiveTheme({
                 "light": true,
                 "dark": false
@@ -25,6 +43,7 @@ function Navigation({ Icon, title }) {
         })
         darkBtn.addEventListener("click", () => {
             bodyClassList.value = "theme-dark";
+            localStorage.setItem("theme", "dark");
             setActiveTheme({
                 "light": false,
                 "dark": true
