@@ -10,7 +10,7 @@ function Navigation({ Icon }) {
     const [activeNavItem, setActiveNavItem] = useState(0);
     const [activeThemeItem, setActiveThemeItem] = useState(0);
 
-    //Nnavigation Items
+    // Navigation Items
     const navItems = [
         { title: "Home", icon: MdHome },
         { title: "Profile", icon: MdPerson },
