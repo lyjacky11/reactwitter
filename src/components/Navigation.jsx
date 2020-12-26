@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './Navigation.css';
 import { MdHome, MdPerson, MdChat, MdExplore, MdNotifications, MdSettings } from 'react-icons/md';
-import { FaLightbulb, FaMoon } from 'react-icons/fa';
+import { FaTwitter, FaLightbulb, FaMoon } from 'react-icons/fa';
 
 /* Components */
 import NavItem from './NavItem';
 
-function Navigation({ Icon }) {
+function Navigation() {
     const [activeNavItem, setActiveNavItem] = useState(0);
     const [activeThemeItem, setActiveThemeItem] = useState(0);
 
@@ -60,7 +60,7 @@ function Navigation({ Icon }) {
         <div className="navigation">
             <div className="navigation__pages">
                 <h2 className="navigation__title">
-                    <Icon className="navigation__titleIcon" />
+                    <FaTwitter className="navigation__titleIcon" />
                     <span className="navigation__titleText">Reactwitter</span>
                 </h2>
                 <div className="navigation__items">

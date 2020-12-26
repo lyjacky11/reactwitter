@@ -10,7 +10,7 @@ import Sidebar from "./components/Sidebar";
 function App () {
 	return (
 		<div className="app">
-			<Navigation Icon={FaTwitter} />
+			<Navigation />
 			<PostsFeed />
 			<Sidebar />
 		</div>
