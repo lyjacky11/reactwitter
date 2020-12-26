@@ -18,22 +18,19 @@ ReactDOM.render(
 //serviceWorkerRegistration.register();
 
 serviceWorkerRegistration.register({
-	onUpdate: registration => {
-	  const waitingServiceWorker = registration.waiting;
-	  if (waitingServiceWorker) {
-		waitingServiceWorker.addEventListener("statechange", event => {
-		  if (event.target.state === "activated") {
-			if (
-			  window.confirm("New app version is available! Do you want to update?")
-			) {
-			  window.location.reload()
-			}
-		  }
-		})
-		waitingServiceWorker.postMessage({ type: "SKIP_WAITING" })
-	  }
+	onUpdate : (registration) => {
+		const waitingServiceWorker = registration.waiting;
+		if (waitingServiceWorker) {
+			waitingServiceWorker.addEventListener("statechange", (event) => {
+				if (event.target.state === "activated") {
+					alert("New app version is available! Click OK to update now.");
+					window.location.reload();
+				}
+			});
+			waitingServiceWorker.postMessage({ type: "SKIP_WAITING" });
+		}
 	}
-})
+});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
