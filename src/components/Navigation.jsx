@@ -78,7 +78,6 @@ function Navigation({ Icon }) {
                     }
                 </div>
             </div>
-            <div className="navigation__spacer"></div>
             <div className="navigation__themes">
                 <h3 className="navigation__title">
                     <span className="navigation__titleText">Theme</span>

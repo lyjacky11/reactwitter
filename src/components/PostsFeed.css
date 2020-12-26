@@ -1,9 +1,9 @@
 .postsFeed {
-	flex: 0.6;
+	flex: 0.55;
 	border-width: 0px var(--border-width);
 	border-color: var(--border-color);
 	border-style: solid;
-	overflow-y: scroll;
+	/* overflow-y: scroll; */
 }
 
 .postsFeed__container {
@@ -41,12 +41,12 @@
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-.postsFeed::-webkit-scrollbar {
+/* .postsFeed::-webkit-scrollbar {
 	display: none;
-  }
+  } */
 
 /* Hide scrollbar for IE, Edge and Firefox */
-.postsFeed {
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-}
+/* .postsFeed {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+} */

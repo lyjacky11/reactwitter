@@ -4,6 +4,11 @@
 	flex-direction: column;
 }
 
+/* .navigation__container {
+	position: sticky;
+	top: 0;
+} */
+
 .navigation__title {
 	display: flex;
 	align-items: center;
@@ -23,8 +28,14 @@
 	transition-property: color, background-color;
 }
 
-.navigation__spacer {
-	flex: 0.9;
+.navigation__pages {
+	position: sticky;
+	top: 0;
+}
+
+.navigation__themes {
+	position: sticky;
+	top: calc(100vh - 225px);
 }
 
 /* @media screen and (min-width: 768px) {
