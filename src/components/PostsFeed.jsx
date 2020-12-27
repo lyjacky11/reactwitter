@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { db } from '../firebase';
 import { MdMenu, MdSearch } from 'react-icons/md';
 import './PostsFeed.css';
@@ -50,11 +51,13 @@ function PostsFeed({ title }) {
             </div>
             {
                 posts?.map(postInfo => (
+                    <Link key={postInfo.id} to={`/post/${postInfo.id}`}>
                     <Post
                         key={postInfo.id}
                         id={postInfo.id}
                         post={postInfo.post}
                     />
+                    </Link>
                 ))
             }
         </div>

@@ -37,6 +37,20 @@ function App () {
 					<Route exact path="/settings">
 						<PostsFeed title="Settings" />
 					</Route>
+					{/* Post */}
+					<Route
+						exact
+						path="/post/:id"
+						// render={(props) => (
+						// 	<PostsFeed
+						// 		key={props.match.params.id}
+						// 		postId={props.match.params.id}
+						// 		title="Post"
+						// 	/>
+						// )}
+						>
+						<PostsFeed title="Post" />
+					</Route>
 					{/* Default */}
 					<Route>
 						<Redirect to="/home" />

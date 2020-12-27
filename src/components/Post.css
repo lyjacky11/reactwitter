@@ -1,6 +1,7 @@
 .post {
     display: flex;
     padding: 10px;
+    color: var(--text-color);
     border-bottom: var(--border-width) solid var(--border-color);
 }
 
