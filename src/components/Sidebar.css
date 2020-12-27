@@ -1,7 +1,9 @@
 .sidebar {
 	flex: 0.2;
 	display: flex;
+	min-width: 200px;
 	flex-direction: column;
+	background-color: var(--bg-color);
 }
 
 .sidebar__header {
@@ -19,5 +21,19 @@
 @media screen and (max-width: 768px) {
 	.sidebar {
 		display: none;
+	}
+	.sidebar__header {
+		position: relative;
+	}
+	.open_menu {
+		display: block;
+		padding: 0 15px 15px 0;
+		border: var(--border-width) solid var(--border-color);
+		position: fixed;
+		z-index: 10;
+		top: 66px;
+		right: 0;
+		height: 600px;
+		
 	}
 }

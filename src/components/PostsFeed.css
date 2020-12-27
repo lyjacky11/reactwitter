@@ -21,6 +21,7 @@
 
 .postsFeed__menu {
 	display: none;
+	cursor: pointer;
 }
 
 .postsFeed__search {
@@ -44,11 +45,9 @@
 }
 
 @media screen and (max-width: 768px) {
-	* {
-		transition: all 300ms ease-in-out;
-	}
 	.postsFeed {
 		flex: 1;
+		transition: flex 300ms ease-in-out;
 	}
 	.postsFeed__menu {
 		display: flex;
