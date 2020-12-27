@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState, useMemo } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Navigation.css';
 import { MdHome, MdPerson, MdChat, MdExplore, MdNotifications, MdSettings } from 'react-icons/md';
 import { FaTwitter, FaLightbulb, FaMoon } from 'react-icons/fa';
@@ -8,24 +8,41 @@ import { FaTwitter, FaLightbulb, FaMoon } from 'react-icons/fa';
 import NavItem from './NavItem';
 
 function Navigation() {
-    const [activeNavItem, setActiveNavItem] = useState(0);
+    const [activeNavItem, setActiveNavItem] = useState();
     const [activeThemeItem, setActiveThemeItem] = useState(0);
+    const location = useLocation();
 
     // Navigation Items
-    const navItems = [
-        { title: "Home", icon: MdHome },
-        { title: "Profile", icon: MdPerson },
-        { title: "Messages", icon: MdChat },
-        { title: "Explore", icon: MdExplore },
-        { title: "Notifications", icon: MdNotifications },
-        { title: "Settings", icon: MdSettings }
-    ]
+    const navItems = useMemo(() => [
+        { title: "Home", route: "/home", icon: MdHome },
+        { title: "Profile", route: "/profile", icon: MdPerson },
+        { title: "Messages", route: "/messages", icon: MdChat },
+        { title: "Explore", route: "/explore", icon: MdExplore },
+        { title: "Notifications", route: "/notifications", icon: MdNotifications },
+        { title: "Settings", route: "/settings", icon: MdSettings }
+    ], []);
 
     // Theme Items
     const themeItems = [
         { title: "Light", theme: "theme__light", icon: FaLightbulb },
         { title: "Dark", theme: "theme__dark", icon: FaMoon }
     ]
+
+    // Set active nav item
+    useEffect(() => {
+        const route = location.pathname;
+        var found = false;
+        for (var i = 0; i < navItems.length; i++) {
+            if (navItems[i].route === route) {
+                setActiveNavItem(i);
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            setActiveNavItem();
+        }
+    }, [location.pathname, navItems]);
 
     // Set theme
     useEffect(() => {
@@ -67,7 +84,7 @@ function Navigation() {
                 <div className="navigation__items">
                     {
                         navItems?.map((item, index) => (
-                            <Link key={index} to={`/${item.title.toLowerCase()}`}>
+                            <Link key={index} to={`${item.route}`}>
                                 <NavItem
                                     key={index}
                                     id={index}
