@@ -15,3 +15,9 @@
 	top: calc(100vh - 75px);
 	padding-left: 20px;
 }
+
+@media screen and (max-width: 768px) {
+	.sidebar {
+		display: none;
+	}
+}
