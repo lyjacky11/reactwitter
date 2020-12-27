@@ -37,6 +37,7 @@ function PostsFeed() {
                 posts?.map(postInfo => (
                     <Post
                         key={postInfo.id}
+                        id={postInfo.id}
                         post={postInfo.post}
                     />
                 ))

@@ -30,7 +30,8 @@ function Sidebar() {
             </div>            
             <div className="sidebar__footer">
                 <h4>© 2020 Jacky Ly.</h4>
-                <h5>Developed with React and Firebase.</h5>
+                <br />
+                <h5>Developed with React & Firebase.</h5>
             </div>
         </div>
     )

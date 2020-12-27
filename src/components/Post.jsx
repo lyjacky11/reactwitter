@@ -21,9 +21,9 @@ function Post({ id, post }) {
                 <div className="post__image">
                     <a href={post.imageUrl} target="_blank" rel="noreferrer"><img className="post__imageSrc" src={post.imageUrl} alt="" /></a>
                 </div>
-                {/* <div className="post__footer">
-                    Footer
-                </div> */}
+                <h5 className="post__id">
+                    ID: {id}
+                </h5>
             </div>
         </div>
     )
