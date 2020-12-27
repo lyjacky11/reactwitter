@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import { FaTwitter } from 'react-icons/fa';
 
 /* Components */
 import Navigation from "./components/Navigation";
