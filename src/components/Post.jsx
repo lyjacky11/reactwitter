@@ -3,7 +3,7 @@ import moment from 'moment';
 import './Post.css';
 import { MdAccountCircle } from 'react-icons/md';
 
-function Post({ id, post }) {
+function Post({ post }) {
     return (
         <div className="post">
             <div className="post__avatar">
@@ -19,11 +19,8 @@ function Post({ id, post }) {
                     {post.text}
                 </div>
                 <div className="post__image">
-                    <a href={post.imageUrl} target="_blank" rel="noreferrer"><img className="post__imageSrc" src={post.imageUrl} alt="" /></a>
+                    <img className="post__imageSrc" src={post.imageUrl} alt="" />
                 </div>
-                {/* <p className="post__id">
-                    ID: {id}
-                </p> */}
             </div>
         </div>
     )

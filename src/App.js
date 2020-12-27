@@ -5,12 +5,15 @@ import "./App.css";
 /* Components */
 import Navigation from "./components/Navigation";
 import PostsFeed from "./components/PostsFeed";
+import PostDetail from "./components/PostDetail";
+import HeaderTop from "./components/HeaderTop";
 import Sidebar from "./components/Sidebar";
 
 function App () {
 	return (
 		<div className="app">
 			<Router>
+				{/* Left Sidebar */}
 				<Navigation />
 				<Switch>
 					{/* Home */}
@@ -19,45 +22,50 @@ function App () {
 					</Route>
 					{/* Profile */}
 					<Route exact path="/profile">
-						<PostsFeed title="Profile" />
+						<div className="postDetail">
+							<HeaderTop title="Profile" />
+						</div>
 					</Route>
 					{/* Messages */}
 					<Route exact path="/messages">
-						<PostsFeed title="Messages" />
+						<div className="postDetail">
+							<HeaderTop title="Messages" />
+						</div>
 					</Route>
 					{/* Explore */}
 					<Route exact path="/explore">
-						<PostsFeed title="Explore" />
+						<div className="postDetail">
+							<HeaderTop title="Explore" />
+						</div>
 					</Route>
 					{/* Notifications */}
 					<Route exact path="/notifications">
-						<PostsFeed title="Notifications" />
+						<div className="postDetail">
+							<HeaderTop title="Notifications" />
+						</div>
 					</Route>
 					{/* Settings */}
 					<Route exact path="/settings">
-						<PostsFeed title="Settings" />
+						<div className="postDetail">
+							<HeaderTop title="Settings" />
+						</div>
 					</Route>
 					{/* Post */}
 					<Route
 						exact
 						path="/post/:id"
-						// render={(props) => (
-						// 	<PostsFeed
-						// 		key={props.match.params.id}
-						// 		postId={props.match.params.id}
-						// 		title="Post"
-						// 	/>
-						// )}
-						>
-						<PostsFeed title="Post" />
-					</Route>
+						render={(props) => (
+							<PostDetail key={props.match.params.id} postId={props.match.params.id} title="Post" />
+						)}
+					/>
 					{/* Default */}
 					<Route>
 						<Redirect to="/home" />
-					</Route>					
+					</Route>
 				</Switch>
+				{/* Right Sidebar */}
 				<Sidebar />
-			</Router>			
+			</Router>
 		</div>
 	);
 }

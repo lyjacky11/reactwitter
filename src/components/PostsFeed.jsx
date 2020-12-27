@@ -52,11 +52,10 @@ function PostsFeed({ title }) {
             {
                 posts?.map(postInfo => (
                     <Link key={postInfo.id} to={`/post/${postInfo.id}`}>
-                    <Post
-                        key={postInfo.id}
-                        id={postInfo.id}
-                        post={postInfo.post}
-                    />
+                        <Post
+                            key={postInfo.id}
+                            post={postInfo.post}
+                        />
                     </Link>
                 ))
             }

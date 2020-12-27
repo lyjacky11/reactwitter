@@ -1,0 +1,13 @@
+.postDetail {
+	flex: 0.5;
+	border-width: 0px var(--border-width);
+	border-color: var(--border-color);
+	border-style: solid;
+}
+
+@media screen and (max-width: 768px) {
+	.postDetail {
+		flex: 1;
+		transition: flex 300ms ease-in-out;
+	}
+}

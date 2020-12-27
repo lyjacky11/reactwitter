@@ -1,0 +1,40 @@
+.headerTop {
+	position: sticky;
+	top: 0;
+}
+
+.headerTop__container {
+	display: flex;
+	align-items: center;
+	background-color: var(--bg-color);
+	border-bottom: var(--border-width) solid var(--border-color);
+	padding: 5px;
+}
+
+.headerTop__back {
+	flex: 0.13;
+}
+
+.headerTop__backIcon {
+	font-size: 25px;
+	padding: 10px;
+	border-radius: 50%;
+}
+
+.headerTop__backIcon:hover {
+	cursor: pointer;
+	color: var(--main-color);
+	background-color: var(--secondary-color);
+	transition: all 250ms ease-in-out;
+	transition-property: color, background-color;
+}
+
+.headerTop__title {
+	flex: 1;
+}
+
+@media screen and (max-width: 768px) {
+	.headerTop__back {
+		flex: 0.2;
+	}
+}
