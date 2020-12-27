@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Navigation.css';
 import { MdHome, MdPerson, MdChat, MdExplore, MdNotifications, MdSettings } from 'react-icons/md';
 import { FaTwitter, FaLightbulb, FaMoon } from 'react-icons/fa';
@@ -66,14 +67,17 @@ function Navigation() {
                 <div className="navigation__items">
                     {
                         navItems?.map((item, index) => (
-                            <NavItem
-                                key={index}
-                                id={index}
-                                title={item.title}
-                                Icon={item.icon}
-                                active={activeNavItem === index}
-                                setActive={setActiveNavItem}
-                            />
+                            <Link key={index} to={`/${item.title.toLowerCase()}`}>
+                                <NavItem
+                                    key={index}
+                                    id={index}
+                                    title={item.title}
+                                    Icon={item.icon}
+                                    active={activeNavItem === index}
+                                    setActive={setActiveNavItem}
+                                />
+                            </Link>
+
                         ))
                     }
                 </div>

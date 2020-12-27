@@ -17,7 +17,6 @@
 }
 
 .navigation__titleIcon:hover {
-	cursor: pointer;
 	color: var(--main-color);
 	transition: all 250ms ease-in-out;
 	transition-property: color, background-color;
