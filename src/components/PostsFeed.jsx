@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { db } from '../firebase';
-import { MdMenu, MdSearch } from 'react-icons/md';
+import { MdMenu } from 'react-icons/md';
 import InfiniteScroll from 'react-infinite-scroller';
 import './PostsFeed.css';
 
@@ -12,32 +12,19 @@ import Post from './Post';
 function PostsFeed({ title }) {
     const [posts, setPosts] = useState([]);
     const [lastPost, setLastPost] = useState();
-    const [morePosts, setMorePosts] = useState(true);
+    const [morePosts, setMorePosts] = useState(false);
     const docLimit = 10;
 
-    const fetchMorePosts = () => {
-        db.collection("posts").orderBy("timestamp", "desc").limit(docLimit).startAfter(lastPost).onSnapshot(snapshot => {
-            setLastPost(snapshot.docs[snapshot.docs.length - 1]);
-            const newPosts = snapshot.docs.map(doc => (
-                { id: doc.id, post: doc.data() }
-            ));
-            setPosts(posts.concat(newPosts));
-        }).catch(error => {
-            setMorePosts(false);
-            console.log(morePosts);
-            console.log(error);
-        });
-    };
-
+    // Fetch initial posts
     useEffect(() => {
         document.title = `${title} | Reactwitter`;
 
         db.collection("posts").orderBy("timestamp", "desc").limit(docLimit).onSnapshot(snapshot => {
-            setLastPost(snapshot.docs[snapshot.docs.length - 1]);
-            setPosts(snapshot.docs.map(doc => (
-                { id: doc.id, post: doc.data() }
-            )))
+            const currentPosts = snapshot.docs.map(doc => ({ id: doc.id, post: doc.data() }));
+            setPosts(currentPosts);
+            setLastPost(currentPosts[currentPosts.length - 1]);
         })
+        setMorePosts(true);
 
         const menuBtn = document.querySelector(".postsFeed__menu");
         const sidebar = document.querySelector(".sidebar");
@@ -51,6 +38,36 @@ function PostsFeed({ title }) {
             }
         });
     }, [title]);
+
+    // Fetch more posts
+    const fetchMorePosts = () => {
+        if (lastPost) {
+            db.collection("posts").orderBy("timestamp", "desc").startAfter(lastPost.post.timestamp).limit(docLimit).onSnapshot(snapshot => {
+                const newPosts = snapshot.docs.map(doc => (
+                    { id: doc.id, post: doc.data() }
+                ));
+                if (newPosts.length > 0) {
+                    // Last set of posts
+                    if (newPosts.length < docLimit) {
+                        // BUG: Last post of database gets duplicated on first load
+                        setPosts(posts.concat(newPosts));
+                        setLastPost(null);
+                        setMorePosts(false);
+                    }
+                    else {
+                        const newLastPost = newPosts[newPosts.length - 1];
+                        setPosts(posts.concat(newPosts));
+                        setLastPost(newLastPost);
+                    }
+                }
+            },
+                error => {
+                    setMorePosts(false);
+                    console.log(error);
+                }
+            )
+        }
+    };
 
     return (
         <div className="postsFeed">
@@ -70,7 +87,7 @@ function PostsFeed({ title }) {
             <InfiniteScroll
                 className="scroller"
                 loadMore={fetchMorePosts}
-                hasMore={false}
+                hasMore={morePosts}
                 loader={
                     <div key={0} className="loader">
                         <h6>Loading more posts...</h6>
