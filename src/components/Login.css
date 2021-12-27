@@ -1,0 +1,14 @@
+.login__container {
+    margin: 10px;
+}
+
+form > input {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.login__button {
+    cursor: pointer;
+    padding: 5px;
+    margin-top: 5px;
+}

@@ -12,6 +12,12 @@
 	padding: 20px;
 }
 
+.sidebar__loginBtn {
+    cursor: pointer;
+    padding: 5px;
+	margin: 0 10px;
+}
+
 .sidebar__footer {
 	position: sticky;
 	top: calc(100vh - 100px);

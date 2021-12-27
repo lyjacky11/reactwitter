@@ -1,28 +1,35 @@
 import React, { useState } from 'react';
 import firebase from 'firebase';
 import { db } from '../firebase';
+import { useStateValue } from "../StateProvider";
 import './CreatePost.css';
 import { MdAccountCircle } from 'react-icons/md';
 
 function CreatePost() {
     const [inputField, setInputField] = useState("");
     const [imageField, setImageField] = useState("");
+    const [{ user },] = useStateValue();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (inputField !== "") {
-            db.collection("posts").add({
-                displayName: "Sample User",
-                username: "demo",
-                text: inputField,
-                imageUrl: imageField,
-                timestamp: firebase.firestore.FieldValue.serverTimestamp()
-            });
-            setInputField("");
-            setImageField("");
+        if (user) {
+            if (inputField !== "") {
+                db.collection("posts").add({
+                    displayName: user.displayName,
+                    username: user.email,
+                    text: inputField,
+                    imageUrl: imageField,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                });
+                setInputField("");
+                setImageField("");
+            }
+            else {
+                alert("Please type something!");
+            }
         }
         else {
-            alert("Please type something!");
+            alert("Please log in before creating a post!");
         }
     }
 

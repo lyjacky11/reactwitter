@@ -1,0 +1,13 @@
+.profile {
+    margin: 10px;
+    display: flex;
+}
+
+.profile__avatar {
+    font-size: 90px;
+}
+
+
+.profile__userInfo > h4 {
+    margin-left: 20px;
+}

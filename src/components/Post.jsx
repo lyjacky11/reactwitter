@@ -12,7 +12,7 @@ function Post({ post }) {
             <div className="post__content">
                 <div className="post__header">
                     <span className="post__displayName">{post.displayName}</span>
-                    <span className="post__username">@{post.username}</span>
+                    <span className="post__username">{post.username}</span>
                     <span className="post__timestamp">{post.timestamp && moment(post.timestamp.toDate()).calendar()}</span>
                 </div>
                 <div className="post__text">
