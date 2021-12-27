@@ -57,10 +57,10 @@ function PostsFeed({ title }) {
             <div className="postsFeed__container">
                 <div className="postsFeed__header">
                     <h3 className="postsFeed__title">{title}</h3>
-                    <div className="postsFeed__search">
+                    {/* <div className="postsFeed__search">
                         <MdSearch className="postsFeed__searchIcon" />
                         <input className="postsFeed__searchInput" type="text" placeholder="Search Posts"></input>
-                    </div>
+                    </div> */}
                     <div className="postsFeed__menu">
                         <MdMenu className="postsFeed__menuIcon" />
                     </div>
