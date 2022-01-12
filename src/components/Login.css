@@ -2,13 +2,25 @@
     margin: 10px;
 }
 
-form > input {
-    padding: 5px;
-    margin-bottom: 10px;
+.login__input {
+    flex: 1;
+    padding: 10px;
+    margin: 10px 0;
+    outline: none;
+    border-radius: 10px;
+    border: none;    
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .login__button {
     cursor: pointer;
-    padding: 5px;
-    margin-top: 5px;
+    padding: 10px 15px;
+	margin-top: 10px;
+    border-radius: 25px;
+    color: white;
+    background-color: var(--main-color);
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
 }

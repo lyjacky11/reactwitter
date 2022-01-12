@@ -5,6 +5,8 @@
 
 .userWidget__avatar {
     font-size: 45px;
+    width: 45px;
+    height: 45px;
     flex: 0.3;
 }
 

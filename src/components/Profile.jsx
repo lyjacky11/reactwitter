@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStateValue } from "../StateProvider";
 import { MdAccountCircle } from 'react-icons/md';
+import { getAvatar } from "../api/getAvatar";
 import './Profile.css';
 
 function Profile() {
@@ -8,7 +9,11 @@ function Profile() {
 
     return (
         <div className="profile">
-            <MdAccountCircle className="profile__avatar" />
+            {
+                user ?
+                    <img className="profile__avatar" alt="Avatar" src={getAvatar(user.displayName)} />
+                    : <MdAccountCircle className="profile__avatar" />
+            }
             <div className="profile__userInfo">
                 <h4 className="profile__displayName">Display Name:<br />{user ? user.displayName : "Not Logged In"}</h4>
                 <br />

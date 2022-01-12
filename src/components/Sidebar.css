@@ -14,8 +14,14 @@
 
 .sidebar__loginBtn {
     cursor: pointer;
-    padding: 5px;
+    padding: 10px 15px;
 	margin: 0 10px;
+    border-radius: 25px;
+    color: white;
+    background-color: var(--main-color);
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
 }
 
 .sidebar__footer {

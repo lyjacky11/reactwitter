@@ -39,13 +39,13 @@ function Register() {
         <div className="login__container">
             <form onSubmit={handleAuth}>
                 <h5>First Name:</h5>
-                <input type="text" id="firstName" placeholder="ex. John" value={firstNameField} onChange={(e) => setFirstNameField(e.target.value)} />
+                <input className="login__input" type="text" id="firstName" placeholder="ex. John" value={firstNameField} onChange={(e) => setFirstNameField(e.target.value)} />
                 <h5>Last Name:</h5>
-                <input type="text" id="lastName" placeholder="ex. Doe" value={lastNameField} onChange={(e) => setLastNameField(e.target.value)} />
+                <input className="login__input" type="text" id="lastName" placeholder="ex. Doe" value={lastNameField} onChange={(e) => setLastNameField(e.target.value)} />
                 <h5>Email:</h5>
-                <input type="email" id="email" placeholder="ex. user@domain.com" value={emailField} onChange={(e) => setEmailField(e.target.value)} />
+                <input className="login__input" type="email" id="email" placeholder="ex. user@domain.com" value={emailField} onChange={(e) => setEmailField(e.target.value)} />
                 <h5>Password:</h5>
-                <input type="password" id="password" placeholder="Password" value={pwdField} onChange={(e) => setPwdField(e.target.value)} />
+                <input className="login__input" type="password" id="password" placeholder="Password" value={pwdField} onChange={(e) => setPwdField(e.target.value)} />
                 <br />
                 <button type="submit" className="login__button">
                     Create Account
