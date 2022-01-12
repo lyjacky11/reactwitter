@@ -10,8 +10,9 @@
 }
 
 .createPost__avatar {
-    font-size: 50px;
-    flex: 0;
+    font-size: 45px;
+    width: 45px;
+    height: 45px;
 }
 
 .createPost__input {

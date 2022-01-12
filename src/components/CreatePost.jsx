@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import firebase from 'firebase';
 import { db } from '../firebase';
 import { useStateValue } from "../StateProvider";
-import './CreatePost.css';
 import { MdAccountCircle } from 'react-icons/md';
+import { getAvatar } from "../api/getAvatar";
+import './CreatePost.css';
 
 function CreatePost() {
     const [inputField, setInputField] = useState("");
@@ -37,7 +38,11 @@ function CreatePost() {
         <div className="createPost">
             <form className="createPost__form">
                 <div className="createPost__avatar">
-                    <MdAccountCircle />
+                    {
+                        user ?
+                            <img alt="Avatar" src={getAvatar(user.displayName)} />
+                            : <MdAccountCircle />
+                    }
                 </div>
                 <input className="createPost__input" type="text" onChange={(e) => setInputField(e.target.value)} value={inputField} placeholder="What's happening?"></input>
                 <button className="createPost__button" type="submit" onClick={handleSubmit}>Post</button>

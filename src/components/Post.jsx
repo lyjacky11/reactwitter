@@ -1,13 +1,13 @@
 import React from 'react';
 import moment from 'moment';
+import { getAvatar } from "../api/getAvatar";
 import './Post.css';
-import { MdAccountCircle } from 'react-icons/md';
 
 function Post({ post }) {
     return (
         <div className="post">
             <div className="post__avatar">
-                <MdAccountCircle />
+                <img className="userWidget__avatar" alt="Avatar" src={getAvatar(post.displayName)} />
             </div>
             <div className="post__content">
                 <div className="post__header">
